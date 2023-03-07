@@ -3,12 +3,14 @@
 
 #include "cell.h"
 
-typedef struct Object {
-Cell *current_position;
-int type_object;
+typedef struct {
+    Cell current_position;
+    int type_object;
 } Object;
 
-Object *object_create(Cell *start_position, int type);
-void object_destroy(Object *object);
+Object create_object(Cell current_position, int type_object);
+Cell get_position(Object* object);
+int get_type(Object* object);
+void move(Object* object, Cell new_position);
 
-#endif
+#endif // OBJECT_H

@@ -3,13 +3,13 @@
 
 #include "cell.h"
 
-typedef struct Monster {
-Cell *current_position;
+typedef struct {
+    Cell current_position;
 } Monster;
 
-Monster *monster_create(Cell *start_position);
-void monster_destroy(Monster *monster);
+Monster create_monster(Cell current_position);
+Cell get_position(Monster* monster);
+void move(Monster* monster, Cell new_position);
+void attack_hero(Monster* monster);
 
-void monster_attack_hero(Monster *monster);
-
-#endif
+#endif // MONSTER_H

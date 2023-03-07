@@ -21,3 +21,4 @@ bool cell_contain_object(Cell *cell);
 bool cell_contain_aryan_wire(Cell *cell);
 
 #endif
+

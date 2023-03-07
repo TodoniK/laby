@@ -1,24 +1,23 @@
 #ifndef HERO_H
 #define HERO_H
 
-#include <stdbool.h>
-#include "maze.h"
+#include "cell.h"
 #include "object.h"
 
-typedef struct Hero {
-Cell *current_position;
-int current_direction;
-bool has_sword;
-int speed;
+typedef struct {
+    Cell current_position;
+    int current_direction;
+    Object* list_objects;
+    int speed;
 } Hero;
 
-Hero *hero_create(Cell *start_position);
-void hero_destroy(Hero *hero);
+Hero create_hero(Cell current_position, int current_direction, Object* list_objects, int speed);
+Cell get_position(Hero* hero);
+int get_direction(Hero* hero);
+void move(Hero* hero, int direction);
+Object* pick_object(Hero* hero);
+Cell attack_monster(Hero* hero);
+void use_aryan_thread(Hero* hero);
+void change_speed(Hero* hero, int new_speed);
 
-void hero_move(Hero *hero, int direction);
-Object *hero_pick_object(Hero *hero);
-Cell *hero_attack(Hero *hero);
-void hero_use_aryan_thread(Hero *hero, Maze *maze);
-void hero_change_speed(Hero *hero, int speed_change);
-
-#endif
+#endif // HERO_H
