@@ -1,11 +1,60 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include "cell.h"
 #include <time.h>
 
-#define WIDTH 20
-#define HEIGHT 10
+#define WIDTH 15
+#define HEIGHT 15
+
+int grid[WIDTH][HEIGHT];
+
+void print_maze(){
+    for (int i = 0; i < WIDTH; i++) {
+        for (int j = 0; j < HEIGHT; j++) {
+            if (grid[i][j] == 1) {
+                printf("█");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void generate_maze() {
+    // Initialize the grid with walls
+    for (int i = 0; i < WIDTH; i++) {
+        for (int j = 0; j < HEIGHT; j++) {
+            if (i == 0 || j == 0 || i == WIDTH-1 || j == HEIGHT-1) {
+                grid[i][j] = 1; // Surround the maze with walls
+            } else if (i % 2 == 0 && j % 2 == 0) {
+                grid[i][j] = 1; // Mark the walls
+            } else if (i % 2 == 1 && j % 2 == 0) {
+                grid[i][j] = 0; // Clear the even rows
+            } else {
+                grid[i][j] = 1; // Mark the walls
+            }
+        }
+    }
+
+    // Dig odd columns
+    for (int i = 1; i < WIDTH-1; i += 2) {
+        for (int j = 1; j < HEIGHT-1; j++) {
+            grid[i][j] = 0; // Dig the odd columns
+        }
+    }
+
+    // Dig random cells in even columns
+    srand(time(NULL)); // Seed the random number generator with the current time
+    int num_digs = rand() % ((WIDTH/2-1)*(HEIGHT-2)); // Choose a random number of cells to dig
+    for (int n = 0; n < num_digs; n++) {
+        int i = rand() % (WIDTH/2-1) * 2 + 2; // Choose a random even column
+        int j = rand() % (HEIGHT-2) + 1; // Choose a random row (excluding walls)
+        if (grid[i][j] == 1) {
+            grid[i][j] = 0; // Dig the cell
+        }
+    }
+
+}
 
 int main() {
    /*int choice;
@@ -46,45 +95,8 @@ int main() {
       }
    }*/
 
-   // Initialisation du générateur de nombres pseudo-aléatoires
-    srand(time(NULL));
-
-    enum cell maze[WIDTH][HEIGHT];
-
-    // Initialisation de toutes les cases à "mur"
-    for (int i = 0; i < WIDTH; i++) {
-        for (int j = 0; j < HEIGHT; j++) {
-            maze[i][j] = Wall;
-        }
-    }
-
-    // Génération des couloirs (cases impaires)
-    for (int i = 1; i < WIDTH; i += 2) {
-        for (int j = 1; j < HEIGHT; j += 2) {
-            maze[i][j] = Corridor;
-        }
-    }
-
-    // Creusement de cases aléatoires
-    for (int i = 0; i < WIDTH; i++) {
-        for (int j = 0; j < HEIGHT; j++) {
-            if (maze[i][j] == Wall && rand() % 2 == 0) {
-                maze[i][j] = Corridor;
-            }
-        }
-    }
-
-    // Affichage du labyrinthe
-    for (int i = 0; i < HEIGHT; i++) {
-        for (int j = 0; j < WIDTH; j++) {
-            if (maze[j][i] == Wall) {
-                printf("#");
-            } else {
-                printf(" ");
-            }
-        }
-        printf("\n");
-    }
-
+    generate_maze();
+    print_maze();
+    
     return 0;
 }

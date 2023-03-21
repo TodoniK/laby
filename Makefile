@@ -8,11 +8,11 @@ bin/%.o: src/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $< -fPIC
 
 main:
-	@echo "**2** Compilation avec librairies..."
-	@$(CC) $(CFLAGS) -o $@ src/main.c $< -lm
+	@echo " -- COMPILATION -- "
+	@$(CC) $(CFLAGS) -o $@ src/maze.c $< -lm
 
 clean:
-	@echo "NETTOYAGE !!!"
+	@echo " -- NETTOYAGE -- "
 	@rm -f main
 
 doc:
