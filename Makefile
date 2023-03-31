@@ -3,20 +3,16 @@ CFLAGS = -Iinclude -std=c99
 
 all: main
 
-bin/%.o: src/%.c
-	@ echo "**1** Compilation du $<..."
-	@$(CC) $(CFLAGS) -c -o $@ $< -fPIC
-
 main:
-	@echo " -- COMPILATION -- "
-	@$(CC) $(CFLAGS) -o $@ src/maze.c $< -lm
+	@echo "-- COMPILATION --"
+	@$(CC) $(CFLAGS) -o $@ src/main.c src/labyrinthe.c $< -lm
 
 clean:
-	@echo " -- NETTOYAGE -- "
+	@echo "-- NETTOYAGE --"
 	@rm -f main
 
 doc:
-	@echo "Compilation de la documentation !!"
+	@echo "-- DOCUMENTATION --"
 	@doxygen doc/Doxyfile
 
 .PHONY: clean all doc
