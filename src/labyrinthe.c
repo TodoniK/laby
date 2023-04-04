@@ -10,7 +10,7 @@ void afficherLaby(const char *labyrinthe, int largeur, int hauteur){
       for(int x = 0; x < largeur; x++) {
          switch(labyrinthe[y * largeur + x]) {
             case 1:  
-               printf("[]");  
+               printf("██");  
                break;
          
             case 2:  
