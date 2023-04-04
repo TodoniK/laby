@@ -4,14 +4,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Fonction permettant d'afficher le labyrinthe. Prend en entrée le labyrinthe (pointeur sur la début de la chaîne de caractère), la hauteur et la largeur du labyrinthe */
+/**
+ * @file labyrinthe.h
+ * @brief Ce fichier contient les prototypes des fonctions du labyrinthe ainsi que les commentaires associés à ces fonctions
+ */
+
+/**
+ * @brief Fonction permettant d'afficher le labyrinthe
+ *
+ * @param[in] labyrinthe : pointeur sur la début de la chaîne de caractère représentant le labyrinthe
+ * @param[in] largeur : largeur voulue du labyrinthe
+ * @param[in] hauteur : hauteur voulue du labyrinthe
+ */
 void afficherLaby(const char *labyrinthe, int largeur, int hauteur);
 
-/*  Fonction implémentant l'algorithme de reverse backtracking. Prend en paramètre le pointeur sur le début du labyrinthe, la hauteur et largeur de celui-ci, 
-    ainsi que la position de la case dont on veut visiter (et creuser) les voisins */
+/**
+ * @brief Fonction implémentant l'algorithme de reverse backtracking
+ *
+ * @param[in] labyrinthe : pointeur sur la début de la chaîne de caractère représentant le labyrinthe
+ * @param[in] largeur : largeur voulue du labyrinthe
+ * @param[in] hauteur : hauteur voulue du labyrinthe
+ * @param[in] x : abscisse de la case dont on veut visiter (et creuser) les voisins 
+ * @param[in] y : ordonnée de la case dont on veut visiter (et creuser) les voisins
+ */
 void creuserLaby(char *labyrinthe, int largeur, int hauteur, int x, int y);
 
-/* Fonction permettant d'initialiser le labyrinthe à un ensemble de murs, et de creuser les cases de celui-ci en appelant la fonction creuserLaby pour toutes ses cases */
+/**
+ * @brief Fonction permettant d'initialiser le labyrinthe à un ensemble de murs, et de creuser les cases de celui-ci en appelant la fonction creuserLaby pour toutes ses cases
+ *
+ * @param[in] labyrinthe : pointeur sur la début de la chaîne de caractère représentant le labyrinthe
+ * @param[in] largeur : largeur voulue du labyrinthe
+ * @param[in] hauteur : hauteur voulue du labyrinthe
+ */
 void genererLaby(char *labyrinthe, int largeur, int hauteur);
 
 #endif

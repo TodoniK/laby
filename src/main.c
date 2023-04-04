@@ -15,6 +15,7 @@ int main() {
     /* Affichage à l'écran du menu de choix pour l'utilisateur */
     int nombreChoisi;
     char entreeUtilisateur[100];
+    int premiereGeneration = 0;
 
     while (1) {
         printf("\n\n-------------------------------------------\n");
@@ -36,6 +37,7 @@ int main() {
         switch (nombreChoisi) {
             case 1:
                 genererLaby(labyrinthe, largeur, hauteur);
+                premiereGeneration = 1;
                 printf("\n-- LABYRINTHE GENERE --");
             break;
 
