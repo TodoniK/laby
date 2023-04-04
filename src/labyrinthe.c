@@ -13,10 +13,6 @@ void afficherLaby(const char *labyrinthe, int largeur, int hauteur){
                printf("██");  
                break;
          
-            case 2:  
-               printf("<>");  
-               break;
-         
             default: 
                printf("  ");  
                break;
