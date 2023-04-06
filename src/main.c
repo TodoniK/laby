@@ -5,12 +5,11 @@
 
 int main() {
 
-    int largeur = 17; 
-    int hauteur = 17;
-    char *labyrinthe;
-
-    /* Allocation dynamique de la mémoire à la chaine de caractère correspondant à notre labyrinthe en fonction de la longueur et de la largeur choisie */
-    labyrinthe = (char*)malloc(largeur * hauteur * sizeof(char));
+    Labyrinthe laby = {
+        .hauteur = 17,
+        .largeur = 17,
+        .grille = (char*)malloc(laby.largeur * laby.hauteur * sizeof(char)) /* Allocation dynamique de la mémoire à la chaine de caractère correspondant à notre labyrinthe en fonction de la longueur et de la largeur choisie */
+    };
    
     /* Affichage à l'écran du menu de choix pour l'utilisateur */
     int nombreChoisi;
@@ -36,14 +35,14 @@ int main() {
 
         switch (nombreChoisi) {
             case 1:
-                genererLaby(labyrinthe, largeur, hauteur);
+                genererLaby(laby);
                 premiereGeneration = 1;
                 printf("\n-- LABYRINTHE GENERE --");
             break;
 
             case 2:
                 printf("\n");
-                afficherLaby(labyrinthe, largeur, hauteur);
+                afficherLaby(laby);
             break;
 
             case 3:
@@ -60,7 +59,7 @@ int main() {
     }
 
     /* Libération de la mémoire */
-    free(labyrinthe);
+    free(laby.grille);
 
     exit(EXIT_SUCCESS);
 }

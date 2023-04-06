@@ -10,32 +10,58 @@
  */
 
 /**
+ * @brief Structure du labyrinthe
+ */
+typedef struct {
+    char *grille;
+    int hauteur;
+    int largeur;
+} Labyrinthe;
+
+/**
+ * @brief Structure de case possible
+ */
+//typedef enum {COULOIR='  ',MUR='██',NORD='↑',SUD='↓',EST='→',OUEST='←'} caractereAffiche;
+typedef enum {COULOIR,MUR,NORD,SUD,EST,OUEST,MAX} enumCaractere;
+//char caracteresAffiche[MAX] = {' ', 0xDB, 0x18, 0x19, 0x1A, 0x1B};
+
+/**
+ * @brief Fonction permettant de retourner la valeur située dans la case en x,y
+ *
+ * @param[in] x : abscisse de la case souhaitée
+ * @param[in] y : ordonnée de la case souhaitée
+ */
+int getValeurCase(Labyrinthe lab, int x, int y);
+
+/**
+ * @brief Fonction permettant de mettre à jour la valeur située dans la case en x,y
+ *
+ * @param[in] x : abscisse de la case souhaitée
+ * @param[in] y : ordonnée de la case souhaitée
+ */
+void setValeurCase(Labyrinthe lab, int x, int y);
+
+/**
  * @brief Fonction permettant d'afficher le labyrinthe
  *
- * @param[in] labyrinthe : pointeur sur la début de la chaîne de caractère représentant le labyrinthe
- * @param[in] largeur : largeur voulue du labyrinthe
- * @param[in] hauteur : hauteur voulue du labyrinthe
+ * @param[in] lab : pointeur sur la structure du labyrinthe
  */
-void afficherLaby(const char *labyrinthe, int largeur, int hauteur);
+void afficherLaby(Labyrinthe lab);
 
 /**
  * @brief Fonction implémentant l'algorithme de reverse backtracking
  *
- * @param[in] labyrinthe : pointeur sur la début de la chaîne de caractère représentant le labyrinthe
- * @param[in] largeur : largeur voulue du labyrinthe
- * @param[in] hauteur : hauteur voulue du labyrinthe
+ * @param[in] lab : pointeur sur la structure du labyrinthe
  * @param[in] x : abscisse de la case dont on veut visiter (et creuser) les voisins 
  * @param[in] y : ordonnée de la case dont on veut visiter (et creuser) les voisins
  */
-void creuserLaby(char *labyrinthe, int largeur, int hauteur, int x, int y);
+void creuserLaby(Labyrinthe lab, int x, int y);
 
 /**
  * @brief Fonction permettant d'initialiser le labyrinthe à un ensemble de murs, et de creuser les cases de celui-ci en appelant la fonction creuserLaby pour toutes ses cases
  *
- * @param[in] labyrinthe : pointeur sur la début de la chaîne de caractère représentant le labyrinthe
- * @param[in] largeur : largeur voulue du labyrinthe
- * @param[in] hauteur : hauteur voulue du labyrinthe
+ * @param[in] lab : pointeur sur la structure du labyrinthe
  */
-void genererLaby(char *labyrinthe, int largeur, int hauteur);
+void genererLaby(Labyrinthe lab);
 
 #endif

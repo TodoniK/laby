@@ -3,13 +3,21 @@
 #include <time.h>
 #include "labyrinthe.h"
 
-void afficherLaby(const char *labyrinthe, int largeur, int hauteur){
+int getValeurCase(Labyrinthe lab, int x, int y){
+   return lab.grille[y * lab.largeur + x];
+}
+
+void setValeurCase(Labyrinthe lab, int x, int y){
+
+}
+
+void afficherLaby(Labyrinthe lab){
 
    /* On parcourt tout le labyrinthe et on affiche les cases */   
-   for(int y = 0; y < hauteur; y++) {
-      for(int x = 0; x < largeur; x++) {
-         switch(labyrinthe[y * largeur + x]) {
-            case 1:  
+   for(int y = 0; y < lab.hauteur; y++) {
+      for(int x = 0; x < lab.largeur; x++) {
+         switch(lab.grille[y * lab.largeur + x]) {
+            case MUR:  
                printf("██");  
                break;
          
@@ -23,7 +31,7 @@ void afficherLaby(const char *labyrinthe, int largeur, int hauteur){
 
 }
 
-void creuserLaby(char *labyrinthe, int largeur, int hauteur, int x, int y){
+void creuserLaby(Labyrinthe lab, int x, int y){
 
    int xCaseDerriere, yCaseDerriere;
    int xCaseDevant, yCaseDevant;
@@ -59,10 +67,10 @@ void creuserLaby(char *labyrinthe, int largeur, int hauteur, int x, int y){
       xCaseDevant = xCaseDerriere + dx;
       yCaseDevant = yCaseDerriere + dy;
 
-      if(xCaseDevant > 0 && xCaseDevant < largeur && yCaseDevant > 0 && yCaseDevant < hauteur /* On vérifie que la case devant notre case actuelle n'est pas en dehors des murs du labyrinthe */
-         && labyrinthe[yCaseDerriere * largeur + xCaseDerriere] == 1 && labyrinthe[yCaseDevant * largeur + xCaseDevant] == 1){ /* On vérifie que les deux cases adjacentes sont des murs */
-         labyrinthe[yCaseDerriere * largeur + xCaseDerriere] = 0; /* Si oui, on creuse */
-         labyrinthe[yCaseDevant * largeur + xCaseDevant] = 0;
+      if(xCaseDevant > 0 && xCaseDevant < lab.largeur && yCaseDevant > 0 && yCaseDevant < lab.hauteur /* On vérifie que la case devant notre case actuelle n'est pas en dehors des murs du labyrinthe */
+         && lab.grille[yCaseDerriere * lab.largeur + xCaseDerriere] == MUR && lab.grille[yCaseDevant * lab.largeur + xCaseDevant] == MUR){ /* On vérifie que les deux cases adjacentes sont des murs */
+         lab.grille[yCaseDerriere * lab.largeur + xCaseDerriere] = COULOIR; /* Si oui, on creuse */
+         lab.grille[yCaseDevant * lab.largeur + xCaseDevant] = COULOIR;
          x = xCaseDevant; y = yCaseDevant;
          direction = rand() % 4;
          compteur = 0;
@@ -73,25 +81,28 @@ void creuserLaby(char *labyrinthe, int largeur, int hauteur, int x, int y){
    }
 }
 
-void genererLaby(char *labyrinthe, int largeur, int hauteur){
+void genererLaby(Labyrinthe lab){
 
    /* On commence par remplir le labyrinthe de murs */
-   for(int x = 0; x < largeur * hauteur; x++) {
-      labyrinthe[x] = 1;
+   for(int x = 0; x < lab.largeur * lab.hauteur; x++) {
+      lab.grille[x] = MUR;
    }
+
+   /* Ajout de la case pour éviter l'ilôt du début */
+   lab.grille[1 * lab.largeur + 1] = COULOIR;
 
    /* On met en place le noyeau de l'aléatoire dans le programme */
    srand(time(0));
 
    /* Pour chaque case, on va appeler la fonction creuserLaby qui reprend l'algo de reverse backtracking dans lequel 
       on va regarder si les quatres cases autour de la case courante sont creusables */
-   for(int y = 1; y < hauteur; y += 2) {
-      for(int x = 1; x < largeur; x += 2) {
-         creuserLaby(labyrinthe, largeur, hauteur, x, y);
+   for(int y = 1; y < lab.hauteur; y += 2) {
+      for(int x = 1; x < lab.largeur; x += 2) {
+         creuserLaby(lab, x, y);
       }
    }
 
    /* Ajouter une entrée dans le labyrinthe (ici deuxième case en haut à gauche) */
-   labyrinthe[0 * largeur + 1] = 0;
+   lab.grille[0 * lab.largeur + 1] = COULOIR;
 
 }
