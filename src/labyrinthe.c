@@ -7,8 +7,8 @@ int getValeurCase(Labyrinthe lab, int x, int y){
    return lab.grille[y * lab.largeur + x];
 }
 
-void setValeurCase(Labyrinthe lab, int x, int y){
-
+void setValeurCase(Labyrinthe lab, int x, int y, int nouvelleValeur){
+   lab.grille[y * lab.largeur + x] = nouvelleValeur;
 }
 
 void afficherLaby(Labyrinthe lab){
@@ -16,7 +16,9 @@ void afficherLaby(Labyrinthe lab){
    /* On parcourt tout le labyrinthe et on affiche les cases */   
    for(int y = 0; y < lab.hauteur; y++) {
       for(int x = 0; x < lab.largeur; x++) {
-         switch(lab.grille[y * lab.largeur + x]) {
+         //printf("%s",caracteresAffiche[lab.grille[y * lab.largeur + x]]);
+         
+         switch(getValeurCase(lab,x,y)) {
             case MUR:  
                printf("██");  
                break;
@@ -68,9 +70,10 @@ void creuserLaby(Labyrinthe lab, int x, int y){
       yCaseDevant = yCaseDerriere + dy;
 
       if(xCaseDevant > 0 && xCaseDevant < lab.largeur && yCaseDevant > 0 && yCaseDevant < lab.hauteur /* On vérifie que la case devant notre case actuelle n'est pas en dehors des murs du labyrinthe */
-         && lab.grille[yCaseDerriere * lab.largeur + xCaseDerriere] == MUR && lab.grille[yCaseDevant * lab.largeur + xCaseDevant] == MUR){ /* On vérifie que les deux cases adjacentes sont des murs */
-         lab.grille[yCaseDerriere * lab.largeur + xCaseDerriere] = COULOIR; /* Si oui, on creuse */
-         lab.grille[yCaseDevant * lab.largeur + xCaseDevant] = COULOIR;
+         && getValeurCase(lab,xCaseDerriere,yCaseDerriere) == MUR && getValeurCase(lab,xCaseDevant,yCaseDevant) == MUR){ /* On vérifie que les deux cases adjacentes sont des murs */
+         setValeurCase(lab,xCaseDerriere,yCaseDerriere,COULOIR); /* Si oui, on creuse */
+         setValeurCase(lab,xCaseDevant,yCaseDevant,COULOIR);
+         //setDirectionCase(lab, xCaseDevant, yCaseDevant, direction); /* On affecte la direction vers l'entrée */
          x = xCaseDevant; y = yCaseDevant;
          direction = rand() % 4;
          compteur = 0;
@@ -89,7 +92,7 @@ void genererLaby(Labyrinthe lab){
    }
 
    /* Ajout de la case pour éviter l'ilôt du début */
-   lab.grille[1 * lab.largeur + 1] = COULOIR;
+   setValeurCase(lab,1,1,COULOIR);
 
    /* On met en place le noyeau de l'aléatoire dans le programme */
    srand(time(0));
@@ -103,6 +106,5 @@ void genererLaby(Labyrinthe lab){
    }
 
    /* Ajouter une entrée dans le labyrinthe (ici deuxième case en haut à gauche) */
-   lab.grille[0 * lab.largeur + 1] = COULOIR;
-
+   setValeurCase(lab,lab.xEntree,lab.yEntree,COULOIR);
 }
