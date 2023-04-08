@@ -115,7 +115,7 @@ void genererLaby(Labyrinthe lab){
    }
 
    /* Ajout de la case pour éviter l'ilôt du début */
-   setValeurCase(lab,1,1,COULOIR);
+   setValeurCase(lab,1,1,NORD);
 
    /* On met en place le noyeau de l'aléatoire dans le programme */
    srand(time(0));
@@ -129,7 +129,7 @@ void genererLaby(Labyrinthe lab){
    }
 
    /* Ajouter une entrée dans le labyrinthe (ici deuxième case en haut à gauche) */
-   setValeurCase(lab,lab.xEntree,lab.yEntree,COULOIR);
+   setValeurCase(lab,lab.xEntree,lab.yEntree,NORD);
 }
 
 int getDirectionOpposee(int directionActuelle){
