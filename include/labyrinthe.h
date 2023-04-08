@@ -18,6 +18,8 @@ typedef struct {
     int largeur;
     int xEntree;
     int yEntree;
+    int genere;
+    int resolu;
 } Labyrinthe;
 
 /**
@@ -72,11 +74,8 @@ void genererLaby(Labyrinthe lab);
 /**
  * @brief Fonction permettant de placer la fleche vers l'entrée
  *
- * @param[in] lab : pointeur sur la structure du labyrinthe
- * @param[in] x : abscisse de la case dont on veut visiter (et creuser) les voisins 
- * @param[in] y : ordonnée de la case dont on veut visiter (et creuser) les voisins
- * @param[in] direction : direction actuelle dans laquelle on creuse
+ * @param[in] directionActuelle : direction actuelle dans laquelle on creuse
  */
-void setDirectionCase(Labyrinthe lab, int x, int y, int direction);
+int getDirectionOpposee(int directionActuelle);
 
 #endif /* LABYRINTHE_H */

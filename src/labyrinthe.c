@@ -16,17 +16,41 @@ void afficherLaby(Labyrinthe lab){
    /* On parcourt tout le labyrinthe et on affiche les cases */   
    for(int y = 0; y < lab.hauteur; y++) {
       for(int x = 0; x < lab.largeur; x++) {
-         //printf("%s",caracteresAffiche[lab.grille[y * lab.largeur + x]]);
-         
-         switch(getValeurCase(lab,x,y)) {
-            case MUR:  
-               printf("██");  
+
+         if(lab.resolu != 0){
+            switch(getValeurCase(lab,x,y)) {
+               case MUR:  
+                  printf("██");  
                break;
-         
-            default: 
-               printf("  ");  
+
+               case EST:
+                  printf("->");
                break;
+
+               case OUEST:
+                  printf("<-");
+               break;
+
+               case NORD:
+                  printf("^^");
+               break;
+            
+               default: 
+                  printf("vv");  
+               break;
+            }
+         } else {
+            switch(getValeurCase(lab,x,y)) {
+               case MUR:  
+                  printf("██");  
+               break;
+            
+               default: 
+                  printf("  ");  
+               break;
+            }
          }
+
       }
       printf("\n");
    }
@@ -71,9 +95,8 @@ void creuserLaby(Labyrinthe lab, int x, int y){
 
       if(xCaseDevant > 0 && xCaseDevant < lab.largeur && yCaseDevant > 0 && yCaseDevant < lab.hauteur /* On vérifie que la case devant notre case actuelle n'est pas en dehors des murs du labyrinthe */
          && getValeurCase(lab,xCaseDerriere,yCaseDerriere) == MUR && getValeurCase(lab,xCaseDevant,yCaseDevant) == MUR){ /* On vérifie que les deux cases adjacentes sont des murs */
-         setValeurCase(lab,xCaseDerriere,yCaseDerriere,COULOIR); /* Si oui, on creuse */
-         setValeurCase(lab,xCaseDevant,yCaseDevant,COULOIR);
-         //setDirectionCase(lab, xCaseDevant, yCaseDevant, direction); /* On affecte la direction vers l'entrée */
+         setValeurCase(lab,xCaseDerriere,yCaseDerriere,getDirectionOpposee(direction)); /* Si oui, on creuse et on place la flèche */
+         setValeurCase(lab,xCaseDevant,yCaseDevant,getDirectionOpposee(direction));
          x = xCaseDevant; y = yCaseDevant;
          direction = rand() % 4;
          compteur = 0;
@@ -107,4 +130,25 @@ void genererLaby(Labyrinthe lab){
 
    /* Ajouter une entrée dans le labyrinthe (ici deuxième case en haut à gauche) */
    setValeurCase(lab,lab.xEntree,lab.yEntree,COULOIR);
+}
+
+int getDirectionOpposee(int directionActuelle){
+   switch (directionActuelle)
+   {
+      case 0 :
+         return OUEST;
+      break;
+
+      case 1 :
+         return NORD;
+      break;
+
+      case 2 :
+         return EST;
+      break;
+      
+      default:
+         return SUD;
+      break;
+   }
 }

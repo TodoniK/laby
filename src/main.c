@@ -10,13 +10,14 @@ int main() {
         .yEntree = 0,
         .hauteur = 19,
         .largeur = 19,
+        .genere = 0,
+        .resolu = 0,
         .grille = (char*)malloc(laby.largeur * laby.hauteur * sizeof(char)) /* Allocation dynamique de la mémoire à la chaine de caractère correspondant à notre labyrinthe en fonction de la longueur et de la largeur choisie */
     };
    
     /* Affichage à l'écran du menu de choix pour l'utilisateur */
     int nombreChoisi;
     char entreeUtilisateur[100];
-    int premiereGeneration = 0;
 
     while (1) {
         printf("\n\n-------------------------------------------\n");
@@ -38,17 +39,26 @@ int main() {
         switch (nombreChoisi) {
             case 1:
                 genererLaby(laby);
-                premiereGeneration = 1;
+                laby.genere = 1;
                 printf("\n-- LABYRINTHE GENERE --");
             break;
 
             case 2:
-                printf("\n");
-                afficherLaby(laby);
+                if(laby.genere != 0){
+                    printf("\n");
+                    afficherLaby(laby);
+                } else {
+                    printf("Veuillez generer le labyrinthe une premiere fois !\n");
+                } 
             break;
 
             case 3:
-                // Code pour résoudre le labyrinthe
+                if(laby.genere != 0){
+                    laby.resolu = 1;
+                    printf("\n-- LABYRINTHE RESOLU --");
+                } else {
+                    printf("Veuillez generer le labyrinthe une premiere fois !\n");
+                } 
             break;
 
             case 4:
