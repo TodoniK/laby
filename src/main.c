@@ -40,6 +40,7 @@ int main() {
             case 1:
                 genererLaby(laby);
                 laby.genere = 1;
+                laby.resolu = 0;
                 printf("\n-- LABYRINTHE GENERE --");
             break;
 
