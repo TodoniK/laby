@@ -39,8 +39,8 @@ int main() {
         switch (nombreChoisi) {
             case 1:
                 genererLaby(laby);
-                laby.genere = 1;
-                laby.resolu = 0;
+                laby.genere = 1; /* On met à jour les propriétés du labyrinthe pour pouvoir débloquer l'affichage */
+                laby.resolu = 0; /* Et pour pouvoir rebloquer l'affichage du labyrinthe resolu, de sorte à ce que le labyrinthe puisse etre visible de manière non resolu au depart */
                 printf("\n-- LABYRINTHE GENERE --");
             break;
 
@@ -49,7 +49,7 @@ int main() {
                     printf("\n");
                     afficherLaby(laby);
                 } else {
-                    printf("Veuillez generer le labyrinthe une premiere fois !\n");
+                    printf("Veuillez generer le labyrinthe une premiere fois !\n"); /* Si le labyrinthe est à été généré on affiche sinon msg d'erreur */
                 } 
             break;
 
@@ -58,7 +58,7 @@ int main() {
                     laby.resolu = 1;
                     printf("\n-- LABYRINTHE RESOLU --");
                 } else {
-                    printf("Veuillez generer le labyrinthe une premiere fois !\n");
+                    printf("Veuillez generer le labyrinthe une premiere fois !\n"); /* Si le labyrinthe est à été généré on resout sinon msg d'erreur */
                 } 
             break;
 
