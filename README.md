@@ -27,7 +27,7 @@ Une extension de ce jeu permettra (si le temps le permet) de déplacer un héros
 ![Menu principal](https://image.noelshack.com/fichiers/2023/13/5/1680268710-test.png)
 
 
-![Exemple de labyrinthe généré](https://image.noelshack.com/fichiers/2023/14/7/1681037408-image.png)
+![Exemple de labyrinthe généré](https://image.noelshack.com/fichiers/2023/15/2/1681218429-laby.png)
 
 
 
