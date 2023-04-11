@@ -1,0 +1,190 @@
+\hypertarget{labyrinthe_8h}{\section{Référence du fichier include/labyrinthe.h}
+\label{labyrinthe_8h}\index{include/labyrinthe.\-h@{include/labyrinthe.\-h}}
+}
+
+
+Ce fichier contient les prototypes des fonctions du labyrinthe ainsi que les commentaires associés à ces fonctions.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structLabyrinthe}{Labyrinthe}
+\begin{DoxyCompactList}\small\item\em Structure du labyrinthe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{labyrinthe_8h_a80bfcb579205425260198f4d062009ac}{enum\-Caractere} \{ \\*
+\hyperlink{labyrinthe_8h_a80bfcb579205425260198f4d062009aca435fc7d5b53120363c3c3a0506b11588}{C\-O\-U\-L\-O\-I\-R}, 
+\hyperlink{labyrinthe_8h_a80bfcb579205425260198f4d062009aca4812eae6f742a8f18779779eeeffd570}{M\-U\-R}, 
+\hyperlink{labyrinthe_8h_a80bfcb579205425260198f4d062009acaa1f529db9f2d334d9c41dcc5f6f6e2a7}{N\-O\-R\-D}, 
+\hyperlink{labyrinthe_8h_a80bfcb579205425260198f4d062009acad2d3ceab3fce63bbe07882ab5a4e991e}{S\-U\-D}, 
+\\*
+\hyperlink{labyrinthe_8h_a80bfcb579205425260198f4d062009acab26f94a551dbfca6e0f4f6b5ad145c01}{E\-S\-T}, 
+\hyperlink{labyrinthe_8h_a80bfcb579205425260198f4d062009aca564dddee8796eda21f35c76cb586aeb6}{O\-U\-E\-S\-T}, 
+\hyperlink{labyrinthe_8h_a80bfcb579205425260198f4d062009acad7e097bda6d981de2520f49fe74c25b7}{M\-A\-X}
+ \}
+\begin{DoxyCompactList}\small\item\em Structure de case possible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{labyrinthe_8h_af9ddf46939443c5cf807f5d575ee4afa}{get\-Valeur\-Case} (\hyperlink{structLabyrinthe}{Labyrinthe} lab, int x, int y)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de retourner la valeur située dans la case en x,y. \end{DoxyCompactList}\item 
+void \hyperlink{labyrinthe_8h_a2deaef054f87dcd623632c48c762d20a}{set\-Valeur\-Case} (\hyperlink{structLabyrinthe}{Labyrinthe} lab, int x, int y, int nouvelle\-Valeur)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de mettre à jour la valeur située dans la case en x,y. \end{DoxyCompactList}\item 
+void \hyperlink{labyrinthe_8h_a696e4b25519feade2d645cb639609ef3}{afficher\-Laby} (\hyperlink{structLabyrinthe}{Labyrinthe} lab)
+\begin{DoxyCompactList}\small\item\em Fonction permettant d'afficher le labyrinthe. \end{DoxyCompactList}\item 
+void \hyperlink{labyrinthe_8h_ab67ba509442dbb415efd428a7eeb76dd}{creuser\-Laby} (\hyperlink{structLabyrinthe}{Labyrinthe} lab, int x, int y)
+\begin{DoxyCompactList}\small\item\em Fonction implémentant l'algorithme de reverse backtracking. \end{DoxyCompactList}\item 
+void \hyperlink{labyrinthe_8h_af2d815e5d1e73b3bc426e69cb929b9a3}{generer\-Laby} (\hyperlink{structLabyrinthe}{Labyrinthe} lab)
+\begin{DoxyCompactList}\small\item\em Fonction permettant d'initialiser le labyrinthe à un ensemble de murs, et de creuser les cases de celui-\/ci en appelant la fonction creuser\-Laby pour toutes ses cases. \end{DoxyCompactList}\item 
+int \hyperlink{labyrinthe_8h_a75007e98e4b82e6d4673a93a345a2eb9}{get\-Direction\-Opposee} (int direction\-Actuelle)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de placer la fleche vers l'entrée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Ce fichier contient les prototypes des fonctions du labyrinthe ainsi que les commentaires associés à ces fonctions. 
+
+\subsection{Documentation du type de l'énumération}
+\hypertarget{labyrinthe_8h_a80bfcb579205425260198f4d062009ac}{\index{labyrinthe.\-h@{labyrinthe.\-h}!enum\-Caractere@{enum\-Caractere}}
+\index{enum\-Caractere@{enum\-Caractere}!labyrinthe.h@{labyrinthe.\-h}}
+\subsubsection[{enum\-Caractere}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf enum\-Caractere}}}\label{labyrinthe_8h_a80bfcb579205425260198f4d062009ac}
+
+
+Structure de case possible. 
+
+\begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{C\-O\-U\-L\-O\-I\-R@{C\-O\-U\-L\-O\-I\-R}!labyrinthe.\-h@{labyrinthe.\-h}}\index{labyrinthe.\-h@{labyrinthe.\-h}!C\-O\-U\-L\-O\-I\-R@{C\-O\-U\-L\-O\-I\-R}}\item[{\em 
+\hypertarget{labyrinthe_8h_a80bfcb579205425260198f4d062009aca435fc7d5b53120363c3c3a0506b11588}{C\-O\-U\-L\-O\-I\-R}\label{labyrinthe_8h_a80bfcb579205425260198f4d062009aca435fc7d5b53120363c3c3a0506b11588}
+}]\index{M\-U\-R@{M\-U\-R}!labyrinthe.\-h@{labyrinthe.\-h}}\index{labyrinthe.\-h@{labyrinthe.\-h}!M\-U\-R@{M\-U\-R}}\item[{\em 
+\hypertarget{labyrinthe_8h_a80bfcb579205425260198f4d062009aca4812eae6f742a8f18779779eeeffd570}{M\-U\-R}\label{labyrinthe_8h_a80bfcb579205425260198f4d062009aca4812eae6f742a8f18779779eeeffd570}
+}]\index{N\-O\-R\-D@{N\-O\-R\-D}!labyrinthe.\-h@{labyrinthe.\-h}}\index{labyrinthe.\-h@{labyrinthe.\-h}!N\-O\-R\-D@{N\-O\-R\-D}}\item[{\em 
+\hypertarget{labyrinthe_8h_a80bfcb579205425260198f4d062009acaa1f529db9f2d334d9c41dcc5f6f6e2a7}{N\-O\-R\-D}\label{labyrinthe_8h_a80bfcb579205425260198f4d062009acaa1f529db9f2d334d9c41dcc5f6f6e2a7}
+}]\index{S\-U\-D@{S\-U\-D}!labyrinthe.\-h@{labyrinthe.\-h}}\index{labyrinthe.\-h@{labyrinthe.\-h}!S\-U\-D@{S\-U\-D}}\item[{\em 
+\hypertarget{labyrinthe_8h_a80bfcb579205425260198f4d062009acad2d3ceab3fce63bbe07882ab5a4e991e}{S\-U\-D}\label{labyrinthe_8h_a80bfcb579205425260198f4d062009acad2d3ceab3fce63bbe07882ab5a4e991e}
+}]\index{E\-S\-T@{E\-S\-T}!labyrinthe.\-h@{labyrinthe.\-h}}\index{labyrinthe.\-h@{labyrinthe.\-h}!E\-S\-T@{E\-S\-T}}\item[{\em 
+\hypertarget{labyrinthe_8h_a80bfcb579205425260198f4d062009acab26f94a551dbfca6e0f4f6b5ad145c01}{E\-S\-T}\label{labyrinthe_8h_a80bfcb579205425260198f4d062009acab26f94a551dbfca6e0f4f6b5ad145c01}
+}]\index{O\-U\-E\-S\-T@{O\-U\-E\-S\-T}!labyrinthe.\-h@{labyrinthe.\-h}}\index{labyrinthe.\-h@{labyrinthe.\-h}!O\-U\-E\-S\-T@{O\-U\-E\-S\-T}}\item[{\em 
+\hypertarget{labyrinthe_8h_a80bfcb579205425260198f4d062009aca564dddee8796eda21f35c76cb586aeb6}{O\-U\-E\-S\-T}\label{labyrinthe_8h_a80bfcb579205425260198f4d062009aca564dddee8796eda21f35c76cb586aeb6}
+}]\index{M\-A\-X@{M\-A\-X}!labyrinthe.\-h@{labyrinthe.\-h}}\index{labyrinthe.\-h@{labyrinthe.\-h}!M\-A\-X@{M\-A\-X}}\item[{\em 
+\hypertarget{labyrinthe_8h_a80bfcb579205425260198f4d062009acad7e097bda6d981de2520f49fe74c25b7}{M\-A\-X}\label{labyrinthe_8h_a80bfcb579205425260198f4d062009acad7e097bda6d981de2520f49fe74c25b7}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{labyrinthe_8h_a696e4b25519feade2d645cb639609ef3}{\index{labyrinthe.\-h@{labyrinthe.\-h}!afficher\-Laby@{afficher\-Laby}}
+\index{afficher\-Laby@{afficher\-Laby}!labyrinthe.h@{labyrinthe.\-h}}
+\subsubsection[{afficher\-Laby}]{\setlength{\rightskip}{0pt plus 5cm}void afficher\-Laby (
+\begin{DoxyParamCaption}
+\item[{{\bf Labyrinthe}}]{lab}
+\end{DoxyParamCaption}
+)}}\label{labyrinthe_8h_a696e4b25519feade2d645cb639609ef3}
+
+
+Fonction permettant d'afficher le labyrinthe. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em lab} & \-: pointeur sur la structure du labyrinthe \\
+\hline
+\end{DoxyParams}
+\hypertarget{labyrinthe_8h_ab67ba509442dbb415efd428a7eeb76dd}{\index{labyrinthe.\-h@{labyrinthe.\-h}!creuser\-Laby@{creuser\-Laby}}
+\index{creuser\-Laby@{creuser\-Laby}!labyrinthe.h@{labyrinthe.\-h}}
+\subsubsection[{creuser\-Laby}]{\setlength{\rightskip}{0pt plus 5cm}void creuser\-Laby (
+\begin{DoxyParamCaption}
+\item[{{\bf Labyrinthe}}]{lab, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{labyrinthe_8h_ab67ba509442dbb415efd428a7eeb76dd}
+
+
+Fonction implémentant l'algorithme de reverse backtracking. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em lab} & \-: pointeur sur la structure du labyrinthe \\
+\hline
+\mbox{\tt in}  & {\em x} & \-: abscisse de la case dont on veut visiter (et creuser) les voisins \\
+\hline
+\mbox{\tt in}  & {\em y} & \-: ordonnée de la case dont on veut visiter (et creuser) les voisins \\
+\hline
+\end{DoxyParams}
+\hypertarget{labyrinthe_8h_af2d815e5d1e73b3bc426e69cb929b9a3}{\index{labyrinthe.\-h@{labyrinthe.\-h}!generer\-Laby@{generer\-Laby}}
+\index{generer\-Laby@{generer\-Laby}!labyrinthe.h@{labyrinthe.\-h}}
+\subsubsection[{generer\-Laby}]{\setlength{\rightskip}{0pt plus 5cm}void generer\-Laby (
+\begin{DoxyParamCaption}
+\item[{{\bf Labyrinthe}}]{lab}
+\end{DoxyParamCaption}
+)}}\label{labyrinthe_8h_af2d815e5d1e73b3bc426e69cb929b9a3}
+
+
+Fonction permettant d'initialiser le labyrinthe à un ensemble de murs, et de creuser les cases de celui-\/ci en appelant la fonction creuser\-Laby pour toutes ses cases. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em lab} & \-: pointeur sur la structure du labyrinthe \\
+\hline
+\end{DoxyParams}
+\hypertarget{labyrinthe_8h_a75007e98e4b82e6d4673a93a345a2eb9}{\index{labyrinthe.\-h@{labyrinthe.\-h}!get\-Direction\-Opposee@{get\-Direction\-Opposee}}
+\index{get\-Direction\-Opposee@{get\-Direction\-Opposee}!labyrinthe.h@{labyrinthe.\-h}}
+\subsubsection[{get\-Direction\-Opposee}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Direction\-Opposee (
+\begin{DoxyParamCaption}
+\item[{int}]{direction\-Actuelle}
+\end{DoxyParamCaption}
+)}}\label{labyrinthe_8h_a75007e98e4b82e6d4673a93a345a2eb9}
+
+
+Fonction permettant de placer la fleche vers l'entrée. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em direction\-Actuelle} & \-: direction actuelle dans laquelle on creuse \\
+\hline
+\end{DoxyParams}
+\hypertarget{labyrinthe_8h_af9ddf46939443c5cf807f5d575ee4afa}{\index{labyrinthe.\-h@{labyrinthe.\-h}!get\-Valeur\-Case@{get\-Valeur\-Case}}
+\index{get\-Valeur\-Case@{get\-Valeur\-Case}!labyrinthe.h@{labyrinthe.\-h}}
+\subsubsection[{get\-Valeur\-Case}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Valeur\-Case (
+\begin{DoxyParamCaption}
+\item[{{\bf Labyrinthe}}]{lab, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{labyrinthe_8h_af9ddf46939443c5cf807f5d575ee4afa}
+
+
+Fonction permettant de retourner la valeur située dans la case en x,y. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em x} & \-: abscisse de la case souhaitée \\
+\hline
+\mbox{\tt in}  & {\em y} & \-: ordonnée de la case souhaitée \\
+\hline
+\end{DoxyParams}
+\hypertarget{labyrinthe_8h_a2deaef054f87dcd623632c48c762d20a}{\index{labyrinthe.\-h@{labyrinthe.\-h}!set\-Valeur\-Case@{set\-Valeur\-Case}}
+\index{set\-Valeur\-Case@{set\-Valeur\-Case}!labyrinthe.h@{labyrinthe.\-h}}
+\subsubsection[{set\-Valeur\-Case}]{\setlength{\rightskip}{0pt plus 5cm}void set\-Valeur\-Case (
+\begin{DoxyParamCaption}
+\item[{{\bf Labyrinthe}}]{lab, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{nouvelle\-Valeur}
+\end{DoxyParamCaption}
+)}}\label{labyrinthe_8h_a2deaef054f87dcd623632c48c762d20a}
+
+
+Fonction permettant de mettre à jour la valeur située dans la case en x,y. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em x} & \-: abscisse de la case souhaitée \\
+\hline
+\mbox{\tt in}  & {\em y} & \-: ordonnée de la case souhaitée \\
+\hline
+\end{DoxyParams}

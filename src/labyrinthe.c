@@ -24,19 +24,19 @@ void afficherLaby(Labyrinthe lab){
                break;
 
                case EST:
-                  printf("->");
+                  printf("→→");
                break;
 
                case OUEST:
-                  printf("<-");
+                  printf("←←");
                break;
 
                case NORD:
-                  printf("^^");
+                  printf("↑↑");
                break;
             
                default: 
-                  printf("vv");  
+                  printf("↓↓");  
                break;
             }
          } else {
@@ -111,7 +111,7 @@ void genererLaby(Labyrinthe lab){
 
    /* On commence par remplir le labyrinthe de murs */
    for(int x = 0; x < lab.largeur * lab.hauteur; x++) {
-      lab.grille[x] = MUR;
+      setValeurCase(lab,x,0,MUR);
    }
 
    /* Ajout de la case pour éviter l'ilôt du début */

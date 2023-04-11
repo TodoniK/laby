@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Labyrinthe en C:  Fichier source de include/labyrinthe.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Labyrinthe en C
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">labyrinthe.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="labyrinthe_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LABYRINTHE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LABYRINTHE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structLabyrinthe.html">   16</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structLabyrinthe.html#a5a95fe6fa4f565d397c586f3b5988ab1">   17</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structLabyrinthe.html#a5a95fe6fa4f565d397c586f3b5988ab1">grille</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structLabyrinthe.html#ab7faa6700dd69e633b1d6c1c8d1974a1">   18</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structLabyrinthe.html#ab7faa6700dd69e633b1d6c1c8d1974a1">hauteur</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structLabyrinthe.html#a23007607a374817790805e23ed1be08c">   19</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structLabyrinthe.html#a23007607a374817790805e23ed1be08c">largeur</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structLabyrinthe.html#a58b3b04b825e29eaa7b3e8750261dcd1">   20</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structLabyrinthe.html#a58b3b04b825e29eaa7b3e8750261dcd1">xEntree</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structLabyrinthe.html#ad004da5f699104c8df81a4a88fc8e53a">   21</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structLabyrinthe.html#ad004da5f699104c8df81a4a88fc8e53a">yEntree</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structLabyrinthe.html#ac74b66a45b9e340fcb9857701316d348">   22</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structLabyrinthe.html#ac74b66a45b9e340fcb9857701316d348">genere</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structLabyrinthe.html#ad27777cb14b150736ce76ce2182b2968">   23</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structLabyrinthe.html#ad27777cb14b150736ce76ce2182b2968">resolu</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;} <a class="code" href="structLabyrinthe.html">Labyrinthe</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acad2d3ceab3fce63bbe07882ab5a4e991e">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009aca435fc7d5b53120363c3c3a0506b11588">COULOIR</a>,<a class="code" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009aca4812eae6f742a8f18779779eeeffd570">MUR</a>,<a class="code" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acaa1f529db9f2d334d9c41dcc5f6f6e2a7">NORD</a>,<a class="code" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acad2d3ceab3fce63bbe07882ab5a4e991e">SUD</a>,<a class="code" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acab26f94a551dbfca6e0f4f6b5ad145c01">EST</a>,<a class="code" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009aca564dddee8796eda21f35c76cb586aeb6">OUEST</a>,<a class="code" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acad7e097bda6d981de2520f49fe74c25b7">MAX</a>} <a class="code" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009ac">enumCaractere</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">static</span> <span class="keywordtype">char</span> caracteresAffiche[<a class="code" href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acad7e097bda6d981de2520f49fe74c25b7">MAX</a>] = {<span class="charliteral">&#39; &#39;</span>, 0xDB, 0x18, 0x19, 0x1A, 0x1B};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">int</span> <a class="code" href="labyrinthe_8h.html#af9ddf46939443c5cf807f5d575ee4afa">getValeurCase</a>(<a class="code" href="structLabyrinthe.html">Labyrinthe</a> lab, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="labyrinthe_8h.html#a2deaef054f87dcd623632c48c762d20a">setValeurCase</a>(<a class="code" href="structLabyrinthe.html">Labyrinthe</a> lab, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> nouvelleValeur);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> <a class="code" href="labyrinthe_8h.html#a696e4b25519feade2d645cb639609ef3">afficherLaby</a>(<a class="code" href="structLabyrinthe.html">Labyrinthe</a> lab);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> <a class="code" href="labyrinthe_8h.html#ab67ba509442dbb415efd428a7eeb76dd">creuserLaby</a>(<a class="code" href="structLabyrinthe.html">Labyrinthe</a> lab, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> <a class="code" href="labyrinthe_8h.html#af2d815e5d1e73b3bc426e69cb929b9a3">genererLaby</a>(<a class="code" href="structLabyrinthe.html">Labyrinthe</a> lab);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">int</span> <a class="code" href="labyrinthe_8h.html#a75007e98e4b82e6d4673a93a345a2eb9">getDirectionOpposee</a>(<span class="keywordtype">int</span> directionActuelle);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LABYRINTHE_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="structLabyrinthe_html_ad27777cb14b150736ce76ce2182b2968"><div class="ttname"><a href="structLabyrinthe.html#ad27777cb14b150736ce76ce2182b2968">Labyrinthe::resolu</a></div><div class="ttdeci">int resolu</div><div class="ttdef"><b>Definition:</b> labyrinthe.h:23</div></div>
+<div class="ttc" id="labyrinthe_8h_html_af2d815e5d1e73b3bc426e69cb929b9a3"><div class="ttname"><a href="labyrinthe_8h.html#af2d815e5d1e73b3bc426e69cb929b9a3">genererLaby</a></div><div class="ttdeci">void genererLaby(Labyrinthe lab)</div><div class="ttdoc">Fonction permettant d&amp;#39;initialiser le labyrinthe à un ensemble de murs, et de creuser les cases de cel...</div></div>
+<div class="ttc" id="structLabyrinthe_html_a5a95fe6fa4f565d397c586f3b5988ab1"><div class="ttname"><a href="structLabyrinthe.html#a5a95fe6fa4f565d397c586f3b5988ab1">Labyrinthe::grille</a></div><div class="ttdeci">char * grille</div><div class="ttdef"><b>Definition:</b> labyrinthe.h:17</div></div>
+<div class="ttc" id="labyrinthe_8h_html_a80bfcb579205425260198f4d062009aca564dddee8796eda21f35c76cb586aeb6"><div class="ttname"><a href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009aca564dddee8796eda21f35c76cb586aeb6">OUEST</a></div><div class="ttdef"><b>Definition:</b> labyrinthe.h:30</div></div>
+<div class="ttc" id="labyrinthe_8h_html_a80bfcb579205425260198f4d062009acaa1f529db9f2d334d9c41dcc5f6f6e2a7"><div class="ttname"><a href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acaa1f529db9f2d334d9c41dcc5f6f6e2a7">NORD</a></div><div class="ttdef"><b>Definition:</b> labyrinthe.h:30</div></div>
+<div class="ttc" id="labyrinthe_8h_html_a80bfcb579205425260198f4d062009acad2d3ceab3fce63bbe07882ab5a4e991e"><div class="ttname"><a href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acad2d3ceab3fce63bbe07882ab5a4e991e">SUD</a></div><div class="ttdef"><b>Definition:</b> labyrinthe.h:30</div></div>
+<div class="ttc" id="labyrinthe_8h_html_a2deaef054f87dcd623632c48c762d20a"><div class="ttname"><a href="labyrinthe_8h.html#a2deaef054f87dcd623632c48c762d20a">setValeurCase</a></div><div class="ttdeci">void setValeurCase(Labyrinthe lab, int x, int y, int nouvelleValeur)</div><div class="ttdoc">Fonction permettant de mettre à jour la valeur située dans la case en x,y. </div></div>
+<div class="ttc" id="structLabyrinthe_html_ac74b66a45b9e340fcb9857701316d348"><div class="ttname"><a href="structLabyrinthe.html#ac74b66a45b9e340fcb9857701316d348">Labyrinthe::genere</a></div><div class="ttdeci">int genere</div><div class="ttdef"><b>Definition:</b> labyrinthe.h:22</div></div>
+<div class="ttc" id="labyrinthe_8h_html_af9ddf46939443c5cf807f5d575ee4afa"><div class="ttname"><a href="labyrinthe_8h.html#af9ddf46939443c5cf807f5d575ee4afa">getValeurCase</a></div><div class="ttdeci">int getValeurCase(Labyrinthe lab, int x, int y)</div><div class="ttdoc">Fonction permettant de retourner la valeur située dans la case en x,y. </div></div>
+<div class="ttc" id="labyrinthe_8h_html_a80bfcb579205425260198f4d062009ac"><div class="ttname"><a href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009ac">enumCaractere</a></div><div class="ttdeci">enumCaractere</div><div class="ttdoc">Structure de case possible. </div><div class="ttdef"><b>Definition:</b> labyrinthe.h:30</div></div>
+<div class="ttc" id="structLabyrinthe_html_a58b3b04b825e29eaa7b3e8750261dcd1"><div class="ttname"><a href="structLabyrinthe.html#a58b3b04b825e29eaa7b3e8750261dcd1">Labyrinthe::xEntree</a></div><div class="ttdeci">int xEntree</div><div class="ttdef"><b>Definition:</b> labyrinthe.h:20</div></div>
+<div class="ttc" id="labyrinthe_8h_html_a80bfcb579205425260198f4d062009acad7e097bda6d981de2520f49fe74c25b7"><div class="ttname"><a href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acad7e097bda6d981de2520f49fe74c25b7">MAX</a></div><div class="ttdef"><b>Definition:</b> labyrinthe.h:30</div></div>
+<div class="ttc" id="labyrinthe_8h_html_a75007e98e4b82e6d4673a93a345a2eb9"><div class="ttname"><a href="labyrinthe_8h.html#a75007e98e4b82e6d4673a93a345a2eb9">getDirectionOpposee</a></div><div class="ttdeci">int getDirectionOpposee(int directionActuelle)</div><div class="ttdoc">Fonction permettant de placer la fleche vers l&amp;#39;entrée. </div></div>
+<div class="ttc" id="labyrinthe_8h_html_ab67ba509442dbb415efd428a7eeb76dd"><div class="ttname"><a href="labyrinthe_8h.html#ab67ba509442dbb415efd428a7eeb76dd">creuserLaby</a></div><div class="ttdeci">void creuserLaby(Labyrinthe lab, int x, int y)</div><div class="ttdoc">Fonction implémentant l&amp;#39;algorithme de reverse backtracking. </div></div>
+<div class="ttc" id="labyrinthe_8h_html_a80bfcb579205425260198f4d062009aca4812eae6f742a8f18779779eeeffd570"><div class="ttname"><a href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009aca4812eae6f742a8f18779779eeeffd570">MUR</a></div><div class="ttdef"><b>Definition:</b> labyrinthe.h:30</div></div>
+<div class="ttc" id="structLabyrinthe_html_a23007607a374817790805e23ed1be08c"><div class="ttname"><a href="structLabyrinthe.html#a23007607a374817790805e23ed1be08c">Labyrinthe::largeur</a></div><div class="ttdeci">int largeur</div><div class="ttdef"><b>Definition:</b> labyrinthe.h:19</div></div>
+<div class="ttc" id="structLabyrinthe_html"><div class="ttname"><a href="structLabyrinthe.html">Labyrinthe</a></div><div class="ttdoc">Structure du labyrinthe. </div><div class="ttdef"><b>Definition:</b> labyrinthe.h:16</div></div>
+<div class="ttc" id="structLabyrinthe_html_ad004da5f699104c8df81a4a88fc8e53a"><div class="ttname"><a href="structLabyrinthe.html#ad004da5f699104c8df81a4a88fc8e53a">Labyrinthe::yEntree</a></div><div class="ttdeci">int yEntree</div><div class="ttdef"><b>Definition:</b> labyrinthe.h:21</div></div>
+<div class="ttc" id="labyrinthe_8h_html_a696e4b25519feade2d645cb639609ef3"><div class="ttname"><a href="labyrinthe_8h.html#a696e4b25519feade2d645cb639609ef3">afficherLaby</a></div><div class="ttdeci">void afficherLaby(Labyrinthe lab)</div><div class="ttdoc">Fonction permettant d&amp;#39;afficher le labyrinthe. </div></div>
+<div class="ttc" id="labyrinthe_8h_html_a80bfcb579205425260198f4d062009acab26f94a551dbfca6e0f4f6b5ad145c01"><div class="ttname"><a href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009acab26f94a551dbfca6e0f4f6b5ad145c01">EST</a></div><div class="ttdef"><b>Definition:</b> labyrinthe.h:30</div></div>
+<div class="ttc" id="labyrinthe_8h_html_a80bfcb579205425260198f4d062009aca435fc7d5b53120363c3c3a0506b11588"><div class="ttname"><a href="labyrinthe_8h.html#a80bfcb579205425260198f4d062009aca435fc7d5b53120363c3c3a0506b11588">COULOIR</a></div><div class="ttdef"><b>Definition:</b> labyrinthe.h:30</div></div>
+<div class="ttc" id="structLabyrinthe_html_ab7faa6700dd69e633b1d6c1c8d1974a1"><div class="ttname"><a href="structLabyrinthe.html#ab7faa6700dd69e633b1d6c1c8d1974a1">Labyrinthe::hauteur</a></div><div class="ttdeci">int hauteur</div><div class="ttdef"><b>Definition:</b> labyrinthe.h:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.5
+</small></address>
+</body>
+</html>

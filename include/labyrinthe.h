@@ -12,6 +12,7 @@
 /**
  * @brief Structure du labyrinthe
  */
+
 typedef struct {
     char *grille;
     int hauteur;
@@ -25,11 +26,13 @@ typedef struct {
 /**
  * @brief Structure de case possible
  */
+
 typedef enum {COULOIR,MUR,NORD,SUD,EST,OUEST,MAX} enumCaractere;
 
 /**
  * @brief Caractère à affiche en fonction de l'index du type enum
  */
+
 static char caracteresAffiche[MAX] = {' ', 0xDB, 0x18, 0x19, 0x1A, 0x1B};
 
 /**
@@ -38,6 +41,7 @@ static char caracteresAffiche[MAX] = {' ', 0xDB, 0x18, 0x19, 0x1A, 0x1B};
  * @param[in] x : abscisse de la case souhaitée
  * @param[in] y : ordonnée de la case souhaitée
  */
+
 int getValeurCase(Labyrinthe lab, int x, int y);
 
 /**
@@ -46,6 +50,7 @@ int getValeurCase(Labyrinthe lab, int x, int y);
  * @param[in] x : abscisse de la case souhaitée
  * @param[in] y : ordonnée de la case souhaitée
  */
+
 void setValeurCase(Labyrinthe lab, int x, int y, int nouvelleValeur);
 
 /**
@@ -53,6 +58,7 @@ void setValeurCase(Labyrinthe lab, int x, int y, int nouvelleValeur);
  *
  * @param[in] lab : pointeur sur la structure du labyrinthe
  */
+
 void afficherLaby(Labyrinthe lab);
 
 /**
@@ -62,6 +68,7 @@ void afficherLaby(Labyrinthe lab);
  * @param[in] x : abscisse de la case dont on veut visiter (et creuser) les voisins 
  * @param[in] y : ordonnée de la case dont on veut visiter (et creuser) les voisins
  */
+
 void creuserLaby(Labyrinthe lab, int x, int y);
 
 /**
@@ -69,6 +76,7 @@ void creuserLaby(Labyrinthe lab, int x, int y);
  *
  * @param[in] lab : pointeur sur la structure du labyrinthe
  */
+
 void genererLaby(Labyrinthe lab);
 
 /**
@@ -76,6 +84,7 @@ void genererLaby(Labyrinthe lab);
  *
  * @param[in] directionActuelle : direction actuelle dans laquelle on creuse
  */
+
 int getDirectionOpposee(int directionActuelle);
 
 #endif /* LABYRINTHE_H */
