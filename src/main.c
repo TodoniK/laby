@@ -8,8 +8,8 @@ int main() {
     Labyrinthe laby = {
         .xEntree = 1,
         .yEntree = 0,
-        .hauteur = 19,
-        .largeur = 19,
+        .hauteur = 39,
+        .largeur = 39,
         .genere = 0,
         .resolu = 0,
         .grille = (char*)malloc(laby.largeur * laby.hauteur * sizeof(char)) /* Allocation dynamique de la mémoire à la chaine de caractère correspondant à notre labyrinthe en fonction de la longueur et de la largeur choisie */

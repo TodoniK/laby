@@ -30,16 +30,11 @@ typedef struct {
 typedef enum {COULOIR,MUR,NORD,SUD,EST,OUEST,MAX} enumCaractere;
 
 /**
- * @brief Caractère à affiche en fonction de l'index du type enum
- */
-
-static char caracteresAffiche[MAX] = {' ', 0xDB, 0x18, 0x19, 0x1A, 0x1B};
-
-/**
  * @brief Fonction permettant de retourner la valeur située dans la case en x,y
  *
  * @param[in] x : abscisse de la case souhaitée
  * @param[in] y : ordonnée de la case souhaitée
+ * @return Retourne la valeur contenu à la case en x,y
  */
 
 int getValeurCase(Labyrinthe lab, int x, int y);
