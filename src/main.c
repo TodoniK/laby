@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include "labyrinthe.h"
 
 int main() {
@@ -39,9 +38,9 @@ int main() {
         switch (nombreChoisi) {
             case 1:
                 genererLaby(laby);
-                laby.genere = 1; /* On met à jour les propriétés du labyrinthe pour pouvoir débloquer l'affichage */
-                laby.resolu = 0; /* Et pour pouvoir rebloquer l'affichage du labyrinthe resolu, de sorte à ce que le labyrinthe puisse etre visible de manière non resolu au depart */
-                printf("\n-- LABYRINTHE GENERE --");
+                laby.genere = 1;
+                laby.resolu = 0;
+                printf("\n-- LABYRINTHE GENERE --\n");
             break;
 
             case 2:

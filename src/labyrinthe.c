@@ -11,6 +11,9 @@ void setValeurCase(Labyrinthe lab, int x, int y, int nouvelleValeur){
    lab.grille[y * lab.largeur + x] = nouvelleValeur;
 }
 
+// Correspondance avec typedef enum {COULOIR,MUR,NORD,SUD,EST,OUEST,MAX} enumCaractere (labyrinthe.h)
+char * caracteresAffiche[MAX] = {"  ","██","↑↑","↓↓","→→","←←"};
+
 void afficherLaby(Labyrinthe lab){
 
    /* On parcourt tout le labyrinthe et on affiche les cases */   
@@ -18,39 +21,14 @@ void afficherLaby(Labyrinthe lab){
       for(int x = 0; x < lab.largeur; x++) {
 
          if(lab.resolu != 0){
-            switch(getValeurCase(lab,x,y)) {
-               case MUR:  
-                  printf("██");  
-               break;
-
-               case EST:
-                  printf("→→");
-               break;
-
-               case OUEST:
-                  printf("←←");
-               break;
-
-               case NORD:
-                  printf("↑↑");
-               break;
-            
-               default: 
-                  printf("↓↓");  
-               break;
-            }
+            printf("%s",caracteresAffiche[getValeurCase(lab,x,y)]);
          } else {
-            switch(getValeurCase(lab,x,y)) {
-               case MUR:  
-                  printf("██");  
-               break;
-            
-               default: 
-                  printf("  ");  
-               break;
+            if(getValeurCase(lab,x,y) == MUR){
+               printf("%s",caracteresAffiche[MUR]);
+            } else {
+               printf("%s",caracteresAffiche[COULOIR]);
             }
          }
-
       }
       printf("\n");
    }
@@ -108,7 +86,7 @@ void creuserLaby(Labyrinthe lab, int x, int y){
 }
 
 void genererLaby(Labyrinthe lab){
-
+   
    /* On commence par remplir le labyrinthe de murs */
    for(int x = 0; x < lab.largeur * lab.hauteur; x++) {
       setValeurCase(lab,x,0,MUR);
